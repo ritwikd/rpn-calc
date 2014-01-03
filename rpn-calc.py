@@ -28,8 +28,8 @@ try:
 		#Check if item is operator
 		if (str(eqn[i]) in ops):
 			#Pop two variables to operate on
-			fItem = rpnStack.pop()
 			sItem = rpnStack.pop()
+			fItem = rpnStack.pop()
 			
 			#Perform corresponding operation and put back in stack
 			if (eqn[i] == '+'):
