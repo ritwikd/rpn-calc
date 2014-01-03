@@ -8,7 +8,7 @@ try:
 	#Reverse Polish notation stack
 	rpnStack = []
 	#List of all acceptable operators
-	ops = "*/+-%"
+	ops = "*/+-%^"
 
 	#Parsing command line arguments and splitting them into individual elements
 	argParser = ArgumentParser(description='Process a reverse-Polish notation equation.')
@@ -28,8 +28,8 @@ try:
 		#Check if item is operator
 		if (str(eqn[i]) in ops):
 			#Pop two variables to operate on
-			sItem = rpnStack.pop()
 			fItem = rpnStack.pop()
+			sItem = rpnStack.pop()
 			
 			#Perform corresponding operation and put back in stack
 			if (eqn[i] == '+'):
@@ -37,9 +37,11 @@ try:
 			elif(eqn[i] == '-'):
 				rpnStack.append(fItem - sItem)
 			elif (eqn[i] == '/'):
-				rpnStack.append(fItem / sItem)
+				rpnStack.append(sItem / fItem)
 			elif (eqn[i] == '*'):
 				rpnStack.append(fItem * sItem)
+			elif (eqn[i] == '^'):
+				rpnStack.append(fItem ** sItem)
 			else:
 				rpnStack.append(fItem % sItem)
 				
