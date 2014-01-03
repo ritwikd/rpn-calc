@@ -14,7 +14,7 @@ try:
 	argParser = ArgumentParser(description='Process a reverse-Polish notation equation.')
 	argParser.add_argument('eqn', metavar='item',  nargs='+', type=str, help='An item in a reverse-Polish notation equation.')
 	rpnEq = argParser.parse_args().eqn[0]
-	eqn = split(rpnEq)
+	eqn = split(rpnEq.replace('(', '').replace(')', ''))
 	
 	#Converting all non-operator elements into floats.
 	for i in range(len(eqn)):
