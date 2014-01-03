@@ -1,9 +1,0 @@
-('/home/ritwik/workspace/rpn-calc/dist/rpn-calc',
- True,
- False,
- None,
- None,
- [],
- None,
- False,
- 1388718007)
