@@ -1,12 +1,3 @@
-Welcome to the readme for rpn-calc. 
-
-
-
-Using the utility is very simple. There are two ways of running the tool:
-
-Python file: 
-
-
 ========================================
 rpn-calc - A Command Line RPN Calculator
 ========================================
