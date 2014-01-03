@@ -1,4 +1,3 @@
-========================================
 rpn-calc - A Command Line RPN Calculator
 ========================================
 
@@ -7,7 +6,7 @@ rpn-calc is very simple. Just download either the .py or the Linux
 binary and run them (examples below).
 
 Python
-======
+------
 Tool syntax:
 .. code-block:: console
 
@@ -23,7 +22,7 @@ Example:
 
 
 Binary
-======
+------
 
 Tool syntax:
 .. code-block:: console
@@ -39,4 +38,4 @@ Example:
     $
 
 
-Feel free to email me at ritzymail@gmail.com.
+If you have any questions, feel free to email me at ritzymail@gmail.com.
