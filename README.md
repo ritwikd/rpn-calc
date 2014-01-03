@@ -1,4 +1,4 @@
-rpn-calc -a command line RPN calculator
+rpn-calc - A Command Line RPN Calculator
 ========================================
 
 rpn-calc is a command line reverse-Polish notation calculator. Getting 
