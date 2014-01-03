@@ -25,7 +25,7 @@ try:
 	#Reverse Polish notation algorithm
 	for i in range(len(eqn)):
 		#Check if item is operator
-		if (eqn[i] in ops):
+		if (str(eqn[i]) in ops):
 			#Pop two variables to operate on
 			fItem = rpnStack.pop()
 			sItem = rpnStack.pop()
