@@ -33,5 +33,6 @@ Example:
     117
     $
 
+To view an explanation of each step, use the "--simple true" flag. This works for both the Python file and the binary. 
 
-If you have any questions, or find an error, feel free to email me at ritzymail@gmail.com.
+If you have any usage-related questions, find any errors, or have any RPN related questions, feel free to email me at ritzymail@gmail.com.
