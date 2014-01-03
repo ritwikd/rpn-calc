@@ -28,13 +28,13 @@ Tool syntax:
 .. code-block:: console
 
     $ ./rpn-calc "<equation here>"
-    $<output>
+    <output>
     $
 Example:
 .. code-block:: console
 
     $ ./rpn-calc "7 2 + 13 *"
-    $117
+    117
     $
 
 
