@@ -3,44 +3,47 @@ from argparse import ArgumentParser
 from shlex import split
 from subprocess import call
 
-rpnStack = []
-ops = "*/+-%"
+try:
+	rpnStack = []
+	ops = "*/+-%"
 
-argParser = ArgumentParser(description='Process a reverse-Polish notation equation.')
+	argParser = ArgumentParser(description='Process a reverse-Polish notation equation.')
 
-argParser.add_argument('eqn', metavar='item',  nargs='+', type=str, help='An item in a reverse-Polish notation equation.')
+	argParser.add_argument('eqn', metavar='item',  nargs='+', type=str, help='An item in a reverse-Polish notation equation.')
 
-rpnEq = argParser.parse_args().eqn[0]
+	rpnEq = argParser.parse_args().eqn[0]
 
-eqn = split(rpnEq)
+	eqn = split(rpnEq)
 
 
-for i in range(len(eqn)):
-	if (eqn[i] in ops):
-		tempVar = 0
-		if (eqn[i] == '+'):
-			fItem = float(rpnStack.pop())
-			sItem = float(rpnStack.pop())
-			rpnStack.append(fItem + sItem)
-		elif(eqn[i] == '-'):
-			fItem = float(rpnStack.pop())
-			sItem = float(rpnStack.pop())
-			rpnStack.append(fItem - sItem)
-		elif (eqn[i] == '/'):
-			fItem = float(rpnStack.pop())
-			sItem = float(rpnStack.pop())
-			rpnStack.append(fItem / sItem)
-		elif (eqn[i] == '*'):
-			fItem = float(rpnStack.pop())
-			sItem = float(rpnStack.pop())
-			rpnStack.append(fItem * sItem)
+	for i in range(len(eqn)):
+		if (eqn[i] in ops):
+			tempVar = 0
+			if (eqn[i] == '+'):
+				fItem = float(rpnStack.pop())
+				sItem = float(rpnStack.pop())
+				rpnStack.append(fItem + sItem)
+			elif(eqn[i] == '-'):
+				fItem = float(rpnStack.pop())
+				sItem = float(rpnStack.pop())
+				rpnStack.append(fItem - sItem)
+			elif (eqn[i] == '/'):
+				fItem = float(rpnStack.pop())
+				sItem = float(rpnStack.pop())
+				rpnStack.append(fItem / sItem)
+			elif (eqn[i] == '*'):
+				fItem = float(rpnStack.pop())
+				sItem = float(rpnStack.pop())
+				rpnStack.append(fItem * sItem)
+			else:
+				fItem = float(rpnStack.pop())
+				sItem = float(rpnStack.pop())
+				rpnStack.append(fItem % sItem)
+				
 		else:
-			fItem = float(rpnStack.pop())
-			sItem = float(rpnStack.pop())
-			rpnStack.append(fItem % sItem)
-			
-	else:
-		rpnStack.append(eqn[i])
+			rpnStack.append(eqn[i])
 
-print rpnStack.pop()
+	print rpnStack.pop()
+except:
+	print "Invalid equation."
 
