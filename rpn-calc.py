@@ -13,8 +13,9 @@ try:
 	#Parsing command line arguments and splitting them into individual elements
 	argParser = ArgumentParser(description='Process a reverse-Polish notation equation.')
 	argParser.add_argument('eqn', metavar='item',  nargs='+', type=str, help='An item in a reverse-Polish notation equation.')
-	rpnEq = argParser.parse_args().eqn[0]
-	eqn = split(rpnEq.replace('(', '').replace(')', ''))
+	rpnEq = argParser.parse_args().eqn[0].replace('(', '').replace(')', '').replace('[', '').replace(']', '')\
+	.replace('{', '').replace('}', '')
+	eqn = split(rpnEq)
 	
 	#Converting all non-operator elements into floats.
 	for i in range(len(eqn)):
